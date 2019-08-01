@@ -272,7 +272,7 @@ compiler   "compiler"   "/usr/local/lib/R/library"      "3.6.0"
 
 ## Potential next steps
 
-- Use explicit library and registry in Dockerfiles: 
+- Use explicit library and registry in Dockerfiles: https://github.com/rocker-org/rocker/issues/348
 - Add podman building of images to Travis CI tests to make sure there are no problems building the images with non-Docker tools
 - Fix `rocker/rstudio`, see https://github.com/rocker-org/rocker/issues/202
 
