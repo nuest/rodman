@@ -206,7 +206,13 @@ loaded via a namespace (and not attached):
 > 
 ```
 
-_Does not work for images starting RStudio:_
+**Images starting RStudio do not work for _me_** because of permission problems, but [@FelixErnst](https://github.com/FelixErnst) made [some further investigations](https://github.com/rocker-org/rocker-versioned/issues/187) and could run a container with the following command:
+
+```bash
+podman run -dit --ulimit="nofile=4096" --env PASSWORD=bioc -p 8788:8787 --name rocker docker.io/rocker/rstudio
+```
+
+For the sake of completeness, here is the permission error I got:
 
 ```bash
 daniel@gin-nuest:~$ podman run -p 8787:8787 -e PASSWORD=rockman --rm -it docker.io/rocker/verse
