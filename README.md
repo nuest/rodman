@@ -44,9 +44,9 @@ From Docker container
 > 
 ```
 
-_This works!_ The container can write the image, because the user running the container is the Docker daemon.
+_This works!_ The container can write the image, because the user running the container is the _Docker daemon_, and I have the (common) developer setup of being able to run containers without typing `sudo`.
 
-Start a container with `podman` as a regular user, mount the `/tmp` directory, and attempt to append to the file:
+Next, start a container with `podman` as a regular user, mount the `/tmp` directory, and attempt to append to the file:
 
 ```bash
 daniel@gin-nuest:~/git/rocker-versioned/rstudio/3.6.0$ podman run --rm -it -v /tmp:/tempdir docker.io/rocker/r-ver
@@ -67,7 +67,8 @@ root
 > 
 ```
 
-_This does not work!_ Besides the user in the container being `root`, the in-container `root` is mapped to a the regular user outside of the container.
+_This does not work!_
+Besides the user in the container being `root`, the in-container `root` is mapped to a the regular user outside of the container.
 
 ## Building Rocker images with podman
 
@@ -284,4 +285,4 @@ compiler   "compiler"   "/usr/local/lib/R/library"      "3.6.0"
 
 ## License
 
-Copyright Daniel Nüst, published under GPL v. 3.0
+Copyright Daniel Nüst 2019, published under GPL v. 3.0.
